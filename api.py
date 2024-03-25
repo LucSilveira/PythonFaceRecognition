@@ -85,13 +85,20 @@ app = Flask(__name__)
 @app.route("/login", methods=["POST"])
 def login_post():
 
+    # Validando se um arquivo foi enviado para a requisição
     if 'file' not in request.files:
         return 'Nenhum arquivo enviado', 400
-    
+
+    # Capturando o arquivo
     file = request.files['file']
+
+    # Salvando o arquivo em uma pasta temporarea
     filepath = "/home/azureuser/temp/loginenvio" + os.path.splitext( file.filename )[1].lower()
+
+    # Salvando o arquivo
     file.save( filepath )
 
+    # Chamando a funcao de busca das imagens no blob
     return get_azure_container_client( filepath )
 
 app.run(host='0.0.0.0')
