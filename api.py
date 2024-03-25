@@ -11,11 +11,11 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 def get_azure_container_client( loginPath : str):
 
     # Informações fornecidas
-    # connection_string = "DefaultEndpointsProtocol=https;AccountName=codereconhecimento;AccountKey=taIOzH1zxOsWN8HfwOLZqnCl1EO9x53f0txAc6jhBDlLB2/tc2Rr23n9pscd+IuF14YLm+gZ/o+i+ASt0e1C7w==;EndpointSuffix=core.windows.net"
-    connection_string = "DefaultEndpointsProtocol=https;AccountName=securepass;AccountKey=xRFzevfEIqCJ30rilIwKqI6SeZvugSOSYP8uij9RXUu6c9tqeCx3yxpWCZ94/PD0esQgieuBKSqb+ASt/k2tJQ==;EndpointSuffix=core.windows.net"
+    # connection_string = ""
+    connection_string = "Codigo acesso container blob"
     
     # container_name = "containerblobstorage"
-    container_name = "securepasscontainer"
+    container_name = "nome do container"
 
     # Conectar com o serviço do Azure
     blob_service_client = BlobServiceClient.from_connection_string( connection_string )
